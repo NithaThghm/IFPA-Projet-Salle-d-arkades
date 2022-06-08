@@ -1,0 +1,408 @@
+@font-face {
+	font-family: "fippsregular";
+	src: url(/Font/fipps/fipps-regular-webfont.woff2) format("woff2"),
+		url(./Font/fipps/fipps-regular-webfont.woff) format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "edit_undo_line_brkregular";
+	src: url(./Font/edunline/edunline-webfont.woff2) format("woff2"),
+		url(./Font/edunline/edunline-webfont.woff) format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+* {
+	/* --------------------reset -----------------*/
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+}
+html {
+	background-image: url(./Images/BG\ PAC\ MAN.png);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+body {
+	font-family: "edit_undo_line_brkregular";
+	color: blanchedalmond;
+	font-size: 20px;
+	letter-spacing: 2px;
+	background: rgb(74, 85, 89);
+	background: radial-gradient(circle, rgb(85, 92, 95) 80%, rgb(36, 43, 44) 100%);
+	border: solid 5px rgb(33, 41, 33);
+	border-radius: 50px 50px 0 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 1440px;
+}
+.screen {
+	width: 1252px;
+	height: 922px;
+
+	/* ------------DEGRADE EFFET ECRAN TUBE CATHODIQUE-------- */
+	background: rgb(33, 41, 33);
+	background: radial-gradient(circle, rgb(36, 41, 36) 0%, rgba(32, 26, 30, 1) 50%);
+	/* --------------------------------------------------------- */
+
+	/* ---------CADRE DE L'ECRAN------------------ */
+	border-radius: 100% 100% 100% 100% / 15% 15% 15% 15%;
+	/* ----------------------------------------------- */
+
+	border: solid 10px rgb(36, 43, 44);
+	padding-bottom: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	/* overflow: auto; */
+}
+header {
+	width: 100%;
+}
+h1 {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 6.5em;
+}
+h1 a {
+	color: blanchedalmond;
+}
+.new-game a {
+	/* ------------------DEGRADE SUR LE TEXTE NEW GAME---------- */
+	background: linear-gradient(
+		0deg,
+		rgba(255, 178, 2, 0.3) 0%,
+		rgba(236, 122, 33, 0.5) 50%,
+		rgba(255, 94, 4, 1) 100%
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	/* ----------------------------------------------------------- */
+}
+.new-game {
+	font-family: "fippsregular";
+	font-size: 6.5em;
+	text-transform: uppercase;
+
+	/* ----------------ANIMATION NEW GAME------------------ */
+	animation-duration: 1s;
+	animation-name: start;
+	animation-iteration-count: infinite;
+}
+@keyframes start {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+/* --------------------------------------------------------- */
+
+.p-new-game {
+	font-family: "edit_undo_line_brkregular";
+	font-size: 2em;
+	color: blanchedalmond;
+}
+
+/* --------------FORMULAIRE DE CONTACT----------------- */
+form {
+	border: solid 2px blanchedalmond;
+	border-radius: 4px;
+	width: 100%;
+	margin: auto;
+	padding: 10px;
+}
+.form-h2 {
+	text-align: center;
+	font-size: 2em;
+	text-transform: uppercase;
+}
+.p-form {
+	text-align: center;
+	margin: 30px;
+}
+input {
+	width: 100%;
+	padding: 10px 20px;
+	margin: 5px 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: blanchedalmond;
+}
+textarea {
+	width: 100%;
+	padding: 15px 0px 0px 10px;
+	margin: 5px 0;
+	background-color: blanchedalmond;
+	border-radius: 4px;
+}
+.end {
+	display: flex;
+	justify-content: space-around;
+}
+input[type="submit"] {
+	font-family: "edit_undo_line_brkregular";
+	font-size: 1.7em;
+	width: 40%;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border-radius: 4px;
+	cursor: pointer;
+}
+input[type="submit"]:active {
+	transform: scale(0.95);
+}
+input[type="reset"] {
+	font-family: "edit_undo_line_brkregular";
+	font-size: 1.7em;
+	width: 40%;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border-radius: 4px;
+	cursor: pointer;
+}
+input[type="reset"]:active {
+	transform: scale(0.95);
+}
+/* ------------------------------------------------------------ */
+
+/* -----------------NAV BARRE------------------------ */
+
+.nav-list {
+	display: flex;
+	justify-content: space-evenly;
+	background-color: blanchedalmond;
+	color: black;
+	border-radius: 4px;
+}
+
+.nav-item {
+	padding: 5px;
+}
+
+.nav-bg-on-select{
+	background-color: green;
+}
+
+
+/* -------------------------------------------------- */
+
+/* --------------CAROUCEL PAGE D'ACCUEIL----------------------------- */
+#images {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	margin: 5%;
+}
+
+#previous {
+	height: 50%;
+	width: 50%;
+	margin: 5%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Images/photo4.png);
+}
+#current {
+	height: 100%;
+	width: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Images/photo1.png);
+}
+
+#next {
+	height: 50%;
+	width: 50%;
+	margin: 5%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Images/photo2.png);
+}
+/* ------------------------------------------------------ */
+
+.bloc-footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.bloc-footer-reseaux {
+	display: flex;
+	flex-direction: row;
+}
+.bloc-footer-reseaux img {
+	width: 30px;
+	margin: 0 20px;
+	padding-bottom: 5px;
+}
+.bloc-footer-contact {
+	padding-top: 5px;
+	border-top: solid 2px blanchedalmond;
+	text-align: center;
+	font-size: 0.8rem;
+}
+
+/* --------------PAGE PONG------------------------ */
+.pong-main {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+.pong-h2 {
+	text-align: center;
+	font-size: 2em;
+	text-transform: uppercase;
+}
+canvas {
+	border-radius: 4px;
+}
+/* --------------------------------------------------- */
+
+/* ----------------PAGE QUI SOMMES NOUS------------------ */
+.qsn-h2 {
+	text-align: center;
+	font-size: 2em;
+	text-transform: uppercase;
+}
+button {
+	margin-top: 10%;
+	margin-inline: 2vw;
+	padding-inline: 2vw;
+	font-size: 2em;
+	height: 75%;
+	width: 25%;
+	text-align: center;
+	font-family: "edit_undo_line_brkregular";
+	background-color: rgb(159, 168, 170);
+	border-radius: 4px;
+}
+button:hover {
+	background-color: rgb(36, 38, 39);
+}
+button:active {
+	background-color: rgb(78, 83, 85);
+}
+#board {
+	display: flex;
+	position: absolute;
+	margin-top: 5%;
+	height: 70%;
+	width: 60%;
+	background-color: blanchedalmond;
+	transform: scale(0, 0);
+}
+#close {
+	position: relative;
+	left: 95%;
+	border-radius: 50px;
+	height: 10%;
+	width: 5%;
+	background-color: red;
+}
+#close:hover #test1 {
+	transition: 1s;
+	transform: rotate(45deg);
+}
+#close:hover #test2 {
+	transition: 1s;
+	transform: rotate(-45deg);
+}
+#test1 {
+	position: absolute;
+	left: 35%;
+	border-radius: 50px;
+	/* transform: rotate(45deg); */
+	height: 100%;
+	width: 25%;
+	background-color: white;
+}
+#test2 {
+	position: absolute;
+	left: 35%;
+	border-radius: 50px;
+	/* transform: rotate(-45deg); */
+	height: 100%;
+	width: 25%;
+	background-color: white;
+}
+h3 {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	font-size: 4em;
+	font-family: "edit_undo_line_brkregular";
+}
+#text {
+	font-family: "fippsregular";
+	position: absolute;
+	font-size: 2em;
+	margin-top: 15%;
+	margin-left: 5%;
+}
+/* ------------------------------------------------------ */
+
+/* ---------------RESPONSIVE----------------------------- */
+@media (max-width: 1440px) {
+	body {
+		font-size: 14px;
+		width: 1024px;
+	}
+	.screen {
+		width: 890px;
+		height: 655px;
+	}
+}
+
+/* ------------Tablette-------------------- */
+@media (max-width: 920px) {
+	body {
+		font-size: 12px;
+		height: 100vh;
+		width: 100vw;
+	}
+	h2 {
+		font-size: 4em;
+	}
+	.screen {
+		height: 95vh;
+		width: 95vw;
+		border: solid 5px rgb(36, 43, 44);
+	}
+}
+
+/* ----------------Mobile------------------------ */
+@media (max-width: 430px) {
+	html {
+		background-color: black;
+	}
+	body {
+		font-size: 9px;
+		height: 100vh;
+		width: 100vw;
+	}
+	h2 {
+		font-size: 3.9em;
+	}
+	.screen {
+		height: 95vh;
+		width: 95vw;
+		border: solid 5px rgb(36, 43, 44);
+	}
+}

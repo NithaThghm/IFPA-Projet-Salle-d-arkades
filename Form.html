@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>formulaire de contact</title>
+		<link rel="stylesheet" href="./main.css" />
+	</head>
+	<body>
+		<div class="screen">
+			<header>
+				<h1><a href="./NewGame.html">arkades</a></h1>				
+                <nav>
+					<ul class="nav-list">
+						<li class="nav-item">
+							<a href="./Page D'acceuil.html">Accueil</a>
+						</li>
+						<li class="nav-item">
+							<a href="./QuiSommesNous.html">Qui sommes nous</a>
+						</li>
+						<li class="nav-item">
+							<a href="./Pong.html">Pong</a>
+						</li>
+						<li class="nav-item nav-bg-on-select">
+							<a href="./Form.html">Contact</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<main>
+				<h2 class="form-h2">nous contacter</h2>
+                <p class="p-form">3055 route de Lyon / 01000 Bourg-en-Bresse</br>contact@arkades.fr</br>06 06 06 06 06</p>
+				<form method="submit">
+					<label for="name">Nom</label>
+					<input type="text" name="Nom" placeholder="Saisissez votre nom" required />
+					<label for="prénom">Prénom</label>
+					<input type="text" name="Prénom" placeholder="Saisissez votre prénom" required />
+					<label for="email">Email</label>
+					<input type="email" name="email" placeholder="Saisissez votre email" required />
+					<div>
+						<label for="message">Votre message</label>
+						<textarea id="message" name="message" placeholder="Bonjour, je vous contacte car...." required> </textarea>
+					</div>
+					<br />
+					<div class="end">
+						<input type="submit" value="Envoyer" />
+						<input type="reset" value="Annuler" />
+					</div>
+				</form>
+			</main>
+            <footer class="bloc-footer">
+                <div>
+                    <ul class="bloc-footer-reseaux">
+                        <li><a href="#"><img src="./Images/facebook-tile.svg" alt="icones reseaux sociaux" /></a></li>
+                        <li><a href="#"><img src="./Images/twitter-tile.svg" alt="icones reseaux sociaux" /></a></li>
+                        <li><a href="#"><img src="./Images/instagram-tile.svg" alt="icones reseaux sociaux" /></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="bloc-footer-contact">
+                        <li>Adresse: 3055 Route de Lyon / 01000 Bourg-en-Bresse</li>
+                        <li>Email: contact@arkades.fr</li>
+                        <li>Tél: 06 06 06 06 06</li>
+                    </ul>
+                </div>
+            </footer>
+		</div>
+	</body>
+	<script src="./script.js"></script>
+</html>
