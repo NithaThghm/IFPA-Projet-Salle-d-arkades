@@ -283,6 +283,20 @@ input[type="reset"]:active {
 	text-align: center;
 	font-size: 0.8rem;
 }
+/* --------------PAGE Liste des jeux------------------------ */
+.btn-jeux{
+	height: 15%;
+	width: 65%;
+}
+
+/* ------------- Snake ---------------------*/
+
+#stage {
+	border: 2px solid rgb(151, 149, 149);
+  }
+
+/* ------------------------------------------*/
+
 
 /* --------------PAGE PONG------------------------ */
 .pong-main {
@@ -348,6 +362,7 @@ button:active {
 	border-radius: 100% 100% 100% 100% / 15% 15% 15% 15%;
 	transform: scale(0, 0);
 }
+
 #close {
 	position: absolute;
 	top: 5%;
