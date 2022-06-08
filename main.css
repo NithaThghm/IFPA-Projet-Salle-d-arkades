@@ -189,9 +189,10 @@ input[type="reset"]:active {
 	padding: 5px;
 }
 
-.nav-bg-on-select{
-	background-color: green;
-}
+/* Added by Nitha 08/06/2022 */
+	.nav-bg-on-select{
+		background-color: green;
+	}
 
 
 /* -------------------------------------------------- */
