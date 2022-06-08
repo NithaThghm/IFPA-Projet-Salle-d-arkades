@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Arcade</title>
+		<title>arcade</title>
 		<link rel="stylesheet" href="./main.css" />
 	</head>
 	<body>
@@ -13,13 +13,13 @@
 				<h1><a href="./NewGame.html">arkades</a></h1>
 				<nav>
 					<ul class="nav-list">
-						<li class="nav-item nav-bg-on-select">
+						<li class="nav-item">
 							<a href="./Page D'acceuil.html">Accueil</a>
 						</li>
 						<li class="nav-item">
 							<a href="./QuiSommesNous.html">Qui sommes nous</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item nav-bg-on-select">
 							<a href="./ListeDesJeux.html">Jeux</a>
 						</li>
 						<li class="nav-item">
@@ -28,10 +28,10 @@
 					</ul>
 				</nav>
 			</header>
-			<main id="images">
-				<div id="previous"></div>
-				<div id="current"></div>
-				<div id="next"></div>
+			<main class="pong-main">
+				<button class="btn-jeux" id="Tetris">Tetris</button>
+				<button class="btn-jeux" id="Pong">Pong</button>
+				<button class="btn-jeux" id="Snake">Snake</button>
 			</main>
 			<footer class="bloc-footer">
 				<div>
@@ -56,6 +56,6 @@
 				</div>
 			</footer>
 		</div>
+		<script src="./script.js"></script>
 	</body>
-	<script src="./script.js"></script>
 </html>
