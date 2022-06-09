@@ -158,6 +158,31 @@ if(pageName === "/QuiSommesNous.html"){
         board.style.transform = "Scale(1,1)"
     }
 }
+
+let moving_icon = document.getElementById("moving-icon");
+
+moving_icon.onclick = ChangeIcon;
+
+function ChangeIcon(){
+    console.log(moving_icon.getAttribute("src"));
+    if(moving_icon.getAttribute("src") == "./Images/icons8-money-with-wings-48.png"){
+        moving_icon.setAttribute("src", "./Images/icons8-mushroom-49.png");
+    }
+    else{
+        moving_icon.setAttribute("src", "./Images/icons8-money-with-wings-48.png");
+    }
+}
+
+function StartAnimation(){
+    document.getElementById("moving-icon").classList.toggle("anim-start");
+}
+
+function StopAnimation(){
+    document.getElementById("moving-icon").classList.toggle("anim-start");
+    let x = document.getElementById("moving-icon").getBoundingClientRect().left;
+    console.log(x);
+}
+
 /* ------------ Page Liste Des Jeux ------------------- */
 if(pageName === "/ListeDesJeux.html"){
     const Tetris = document.getElementById("Tetris")

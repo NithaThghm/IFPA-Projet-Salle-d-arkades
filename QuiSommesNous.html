@@ -31,10 +31,13 @@
 			</header>
 			<main>
 				<div id="boutons">
-					<button id="mission" class="button"><img src="./Images/icons8-lightsaber.svg" alt="" class="lightsaber-icon"><p>Notre Mission</p></button>
+					<button id="mission" class="button draw-border" onmouseover="StartAnimation()" onmouseout="StopAnimation()"><img src="./Images/icons8-lightsaber.svg" alt="" class="lightsaber-icon"><p>Notre Mission</p></button>
 					<button id="histoire" class="button"><img src="./Images/icons8-licorne.gif" alt="" class="horse-icon">Notre Histoire</button>
 					<button id="equipe" class="button">Notre Equipe</button>
 				</div>
+				<div class="pushable-play-button">Play</div>
+				<div class="pushable-play-button"></div>
+				<img id="moving-icon" src="./Images/icons8-mushroom-49.png" alt="" class="moving-icon">
 			</main>
 			<div id="board">
 				<h3 id="title">Notre Equipe</h3>
@@ -44,6 +47,7 @@
 					<div id="test2"></div>
 				</div>
 			</div>
+			
 			<footer class="bloc-footer">
 				<div>
 					<ul class="bloc-footer-reseaux">
