@@ -425,6 +425,11 @@ h3 {
 .horse-icon{
 	width : 40px;
 	height: 40px;
+	animation-play-state: paused;
+}
+
+#histoire:hover .horser-icon{
+	animation-play-state: running;
 }
 
 /* ------------------------------------------------------ */
