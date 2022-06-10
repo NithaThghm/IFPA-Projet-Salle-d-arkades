@@ -160,8 +160,10 @@ if(pageName === "/QuiSommesNous.html"){
 }
 
 let moving_icon = document.getElementById("moving-icon");
+let play_button = document.getElementById("play-button");
 
 moving_icon.onclick = ChangeIcon;
+play_button.onclick = MoveStopAnim;
 
 function ChangeIcon(){
     console.log(moving_icon.getAttribute("src"));
@@ -181,6 +183,19 @@ function StopAnimation(){
     document.getElementById("moving-icon").classList.toggle("anim-start");
     let x = document.getElementById("moving-icon").getBoundingClientRect().left;
     console.log(x);
+}
+
+function MoveStopAnim(){
+    if(play_button.textContent == "▷"){
+        console.log("Button state : Play");
+        document.getElementById("moving-icon").classList.toggle("anim-start");
+        play_button.textContent = "▢";
+    }
+    else{
+        console.log("Button state : Stop");
+        document.getElementById("moving-icon").classList.toggle("anim-start");
+        play_button.textContent = "▷";
+    }
 }
 
 /* ------------ Page Liste Des Jeux ------------------- */

@@ -366,14 +366,14 @@ canvas {
 	border-radius: 4px;
 } */
 
-button:hover {
+/* button:hover {
 	background-color: rgb(36, 38, 39);
 	outline: solid 1px rgb(250, 196, 228);
-}
+} */
 
-button:active {
+/* button:active {
 	background-color: rgb(78, 83, 85);
-}
+} */
 
 #board {
 	display: flex;
@@ -491,11 +491,36 @@ h3 {
 }
 
 .pushable-play-button{
-	outline : solid 1px white;
-	border-radius : 50%;
-	width : 40px;
-	height: 40px;
+	position : relative;
+	bottom: 70px;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+    background: hsl(340deg 100% 32%);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
 }
+
+.play-button-front{
+    display: flex;
+	position : relative;
+	height: 50px;
+	width: 50px;
+	align-items: center;
+	justify-content: center;
+    /*padding: 12px 42px; */
+    border-radius: 50%;
+    font-size: 1.3rem;
+    background: hsl(345deg 100% 47%);
+    color: white;
+    transform: translateY(-6px);
+}
+
+.pushable-play-button:active .play-button-front {
+    transform: translateY(-2px);
+  }
 
 @keyframes mushroom{
 	from{
