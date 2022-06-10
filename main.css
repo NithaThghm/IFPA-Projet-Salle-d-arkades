@@ -345,6 +345,18 @@ canvas {
 	text-transform: uppercase;
 }
 
+	/* .... CSS des boutons : Notre Mission, Notre Histoire , Notre Equipe */
+
+	.qsn-buttons{
+		outline : solid 5px pink;
+	}
+	
+	.qsn-buttons::before{
+		width : 100%;
+		height : 100%;
+		background-color: white;
+		position: absolute;
+	}
 #boutons{
 	width: 100%;
 	height: 100%;
