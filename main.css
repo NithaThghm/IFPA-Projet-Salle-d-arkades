@@ -68,7 +68,6 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	/* overflow: auto; */
 }
 
 header {
@@ -77,7 +76,6 @@ header {
 
 main {
 	width: 100%;
-	/* overflow: auto; */
 }
 
 h1 {
@@ -354,18 +352,19 @@ canvas {
 
 #boutons {
 	width: 100%;
+	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
 }
 
 button {
-	/* margin-top: 10%; */
-	/* margin-inline: 2vw; */
-	padding-inline: 2vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	font-size: 2em;
-	height: 75%;
-	width: 25%;
+	height: auto;
+	width: 200px;
 	text-align: center;
 	font-family: "edit_undo_line_brkregular";
 	background-color: rgb(159, 168, 170);
@@ -467,11 +466,6 @@ h3 {
 @media (max-width: 1440px) {
 	body {
 		font-size: 13px;
-		/* width: 1024px; */
-	}
-	.screen {
-		/* width: 890px;
-		height: 655px; */
 	}
 }
 
@@ -516,27 +510,32 @@ h3 {
 	/* ------PAGE D'ACCUEIL------ */
 	.bloc-accueil {
 		flex-wrap: wrap;
-		width: 100%;
-		/* height:100vh; */
-
-		/* overflow: auto; */
+		overflow: auto;
 	}
-	.bloc-welcome {
-		width: 100%;
-	}
-	.bloc-caroucel {
+	.bloc-accueil
+	.bloc-welcome,
+	.bloc-caroucel,
+	#images
+	{
 		width: 100%;
 	}
-	#images {
-		height:100vh;
-
-	}
+	
 
 	/* --------FORMULAIRE DE CONTACT--------- */
-	.main-contact {
-		
+	/* .main-contact {
+		overflow: auto;
+	} */
+	
+	.bloc-contact-map{
+		flex-wrap: wrap;
 	}
+	.bloc-contact,
+	.bloc-map {
+		width: 100%;
 }
+
+}
+
 
 .neonText:hover {
 	animation: flicker 1.5s infinite alternate;
