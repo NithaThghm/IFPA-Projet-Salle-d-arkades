@@ -347,48 +347,170 @@ canvas {
 
 	/* .... CSS des boutons : Notre Mission, Notre Histoire , Notre Equipe */
 
-	.qsn-buttons{
-		width: 30%;
-		height: 100px;
-		position: relative;
-		left: 0;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		font-family: "edit_undo_line_brkregular";
-		font-size: 2em;
-		border : solid 5px #ee22c5;
-		cursor : pointer;
-	}
+		/* .... Mise en forme des boutons */
+
+		.qsn-buttons{
+			width: 30%;
+			height: 100px;
+			position: relative;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			font-family: "edit_undo_line_brkregular";
+			font-size: 2em;
+			background-color: white;
+			border : solid 5px #ee22c5;
+			border-radius: 12px;
+			cursor : pointer;
+		}
+
+		/* .... Animation au survol des bordures */
 	
-	.qsn-buttons::before{
-		display: inline-block;
-		position: absolute;
-		width: 100%;
-		height: 25px;
-		left: -5px;
-		right: 0;
-		bottom: -5px;
-		content: "";
-		font-size: 2rem;
-		background-color: white;
-		border: solid 5px white;
-		/* transition : width 0.5s,
-					 height 0.5s 0.5s; */
-		margin : auto;
+		.qsn-buttons::before{
+			display: inline-block;
+			position: absolute;
+			width: calc(100% + 10px);
+			height: 25px;
+			border-bottom-left-radius: 12px;
+			border-bottom-right-radius: 12px;
+			left: -5px;
+			right: 0;
+			bottom: -5px;
+			content: "";
+			font-size: 2rem;
+			background-color: white;
+			transition: width 0.5s,
+						height 0.5s 0.5s;
+			margin: auto;
+		}
 
-	}
+		.qsn-buttons::after{
+			display: inline-block;
+			position: absolute;
+			width: calc(100% + 10px);
+			height: 25px;
+			border-top-left-radius: 12px;
+			border-top-right-radius: 12px;
+			left: -5px;
+			right: 0;
+			top: -5px;
+			content: "";
+			font-size: 2rem;
+			background-color: white;
+			transition: width 0.5s,
+						height 0.5s 0.3s;
+			margin: auto;
+		}
 
-	.qsn-buttons:hover::before{
-		width: 5px;
-		height: 5px;
-		border: none;
-		transition : height 0.5s,
-					 width 0.5s 0.5s;
+		.qsn-buttons:hover::before, .qsn-buttons:hover::after{
+			width: 0;
+			height: 5px;
+			border: none;
+			transition : height 0.5s,
+						width 0.5s 0.3s;
 
-	}
+		}
 
-	
+	/* .... La petite animation de bas de page */
+
+		/* .... Bouton Play/Stop avec effet 3D */
+
+		.pushable-play-button{
+			position : relative;
+			bottom: 70px;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			background: hsl(340deg 100% 32%);
+			border: none;
+			padding: 0;
+			cursor: pointer;
+			outline-offset: 4px;
+		}
+		
+		.play-button-front{
+			display: flex;
+			position : relative;
+			height: 50px;
+			width: 50px;
+			align-items: center;
+			justify-content: center;
+			/*padding: 12px 42px; */
+			border-radius: 50%;
+			font-size: 1.3rem;
+			background: hsl(345deg 100% 47%);
+			color: white;
+			transform: translateY(-6px);
+		}
+		
+		.pushable-play-button:active .play-button-front {
+			transform: translateY(-2px);
+		  }
+
+		/* .... Bouton Play/Stop avec effet 3D */
+
+		.moving-icon{
+			position: absolute;
+			bottom : 12%;
+			left: 5%;
+			width: 40px;
+			height: 40px;
+			z-index: 2;
+		}
+
+		@keyframes moving-icon{
+			from{
+				transform: translateX();
+			}
+			to{
+				transform: translateX(1200px);
+			}
+		}
+		
+		.anim-start{
+			animation: moving-icon 5s ease-in-out alternate infinite;
+		}
+
+		/* .... Le message caché */
+
+		.hidden-msg{
+			position : relative;
+			width : 90%;
+			height: 40px;
+			bottom : 22%;
+			left: 5%;
+			text-align: center;
+		}
+
+		#hidden-msg-front{
+			position : relative;
+			content: "";
+			width : 90%;
+			height: 40px;
+			bottom : 16%;
+			left: 5%;
+			background: rgba(32, 26, 30, 1);
+			z-index:1;
+			transform-origin: 100% 0%;
+		}
+
+		@keyframes showhide-msg{
+			from{
+				transform: scaleX(1);
+			}
+			to{
+				transform: scaleX(0);
+			}
+		}
+		
+		.showhide-msg{
+			animation: showhide-msg 4.9s ease-in-out alternate infinite;
+		}
+
+		
+
+
 #boutons{
 	width: 100%;
 	height: 100%;
@@ -431,6 +553,7 @@ canvas {
 	background-color: blanchedalmond;
 	border-radius: 100% 100% 100% 100% / 15% 15% 15% 15%;
 	transform: scale(0, 0);
+	z-index:3;
 }
 
 #close {
@@ -516,68 +639,6 @@ h3 {
 	position: relative;
 	left: 0;
 }
-
-.horse-icon{
-	width : 40px;
-	height: 40px;
-	animation-play-state:paused;
-}
-
-.moving-icon{
-	position: relative;
-	bottom : 8%;
-	width: 40px;
-	height: 40px;
-}
-
-.anim-start{
-	animation: mushroom 5s ease-in-out alternate infinite;
-}
-
-.pushable-play-button{
-	position : relative;
-	bottom: 70px;
-	height: 50px;
-	width: 50px;
-	border-radius: 50%;
-    background: hsl(340deg 100% 32%);
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    outline-offset: 4px;
-}
-
-.play-button-front{
-    display: flex;
-	position : relative;
-	height: 50px;
-	width: 50px;
-	align-items: center;
-	justify-content: center;
-    /*padding: 12px 42px; */
-    border-radius: 50%;
-    font-size: 1.3rem;
-    background: hsl(345deg 100% 47%);
-    color: white;
-    transform: translateY(-6px);
-}
-
-.pushable-play-button:active .play-button-front {
-    transform: translateY(-2px);
-  }
-
-@keyframes mushroom{
-	from{
-		transform: translateX();
-	}
-	to{
-		transform: translateX(1200px);
-	}
-}
-
-
-
-
 
 
 /* #histoire:hover .horser-icon{

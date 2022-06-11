@@ -161,6 +161,7 @@ if(pageName === "/QuiSommesNous.html"){
 
 let moving_icon = document.getElementById("moving-icon");
 let play_button = document.getElementById("play-button");
+let hidden_msg_front = document.getElementById("hidden-msg-front");
 
 moving_icon.onclick = ChangeIcon;
 play_button.onclick = MoveStopAnim;
@@ -188,12 +189,14 @@ function StopAnimation(){
 function MoveStopAnim(){
     if(play_button.textContent == "▷"){
         console.log("Button state : Play");
-        document.getElementById("moving-icon").classList.toggle("anim-start");
+        moving_icon.classList.toggle("anim-start");
+        hidden_msg_front.classList.toggle("showhide-msg")
         play_button.textContent = "▢";
     }
     else{
         console.log("Button state : Stop");
-        document.getElementById("moving-icon").classList.toggle("anim-start");
+        moving_icon.classList.toggle("anim-start");
+        hidden_msg_front.classList.toggle("showhide-msg")
         play_button.textContent = "▷";
     }
 }
