@@ -122,84 +122,105 @@ function check(){
 }
 
 /* ------------ Page Qui Sommes Nous ------------------- */
-if(pageName === "/QuiSommesNous.html"){
-    const board = document.getElementById("board")
-    const title = document.getElementById("title")
-    const text = document.getElementById("text")
-    const close = document.getElementById("close")
 
-    const mission = document.getElementById("mission")
-    const histoire = document.getElementById("histoire")
-    const equipe = document.getElementById("equipe")
+    /* .... La nouvelle fenêtre d'affichage au clic des boutons Notre Mission, Notre Histoire, Notre Equipe */
 
-    equipe.addEventListener("click", EquipeText =>{
-        title.innerHTML = "Notre Equipe";
-        text.innerHTML = "Notre equipe etc etc";
-        showboard();
-    })
-    histoire.addEventListener("click", HistoireText =>{
-        showboard();
-        title.innerHTML = "Notre Histoire";
-        text.innerHTML = "Notre histoire etc etc";
-    })
-    mission.addEventListener("click", MissionText =>{
-        showboard();
-        title.innerHTML = "Notre Mission";
-        text.innerHTML = "Notre mission etc etc";
-    })
-    close.addEventListener("click", CloseBoard =>{
-        board.style.transition = "1000ms"
-        board.style.transform = "Scale(0,0)"
-    })
+    if(pageName === "/QuiSommesNous.html"){
+        const board = document.getElementById("board")
+        const title = document.getElementById("board-title")
+        const text = document.getElementById("board-text")
+        // const close = document.getElementById("close")
+        const close_button = document.getElementById("close-button");
+        const BoardVideo = document.getElementById("board-video");
 
+        const mission = document.getElementById("mission")
+        const histoire = document.getElementById("histoire")
+        const equipe = document.getElementById("equipe")
 
-    function showboard(){
-        board.style.transition = "1000ms"
-        board.style.transform = "Scale(1,1)"
+        equipe.addEventListener("click", EquipeText =>{
+            showboard();
+            title.innerHTML = "Notre Equipe";
+            text.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+            BoardVideo.setAttribute("src","https://player.vimeo.com/video/358296442?h=8b59dc64ae");
+        })
+        histoire.addEventListener("click", HistoireText =>{
+            showboard();
+            title.innerHTML = "Notre Histoire";
+            text.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+            BoardVideo.setAttribute("src","https://player.vimeo.com/video/117026445?h=7ed53d35c6");
+            
+        mission.addEventListener("click", MissionText =>{
+            showboard();
+            title.innerHTML = "Notre Mission";
+            text.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+            // BoardVideo.setAttribute("src","https://player.vimeo.com/video/50522981?h=9da431679d");
+            BoardVideo.setAttribute("src","https://player.vimeo.com/video/232831266?h=ea447d256f&color=5cd7d4&byline=0&portrait=0");
+        })
+        })
+        // close.addEventListener("click", CloseBoard =>{
+        //     board.style.transition = "1000ms";
+        //     board.style.transform = "Scale(0,0)";
+        // })
+        close_button.addEventListener("click", CloseBoard =>{
+            board.style.transition = "1000ms";
+            board.style.transform = "Scale(0,0)";
+        })
+
+        function showboard(){
+            board.style.transition = "1000ms";
+            board.style.transform = "Scale(1,1)";
+        }
     }
-}
 
-let moving_icon = document.getElementById("moving-icon");
-let play_button = document.getElementById("play-button");
-let hidden_msg_front = document.getElementById("hidden-msg-front");
+    /* .... La petite animation de bas de page */
 
-moving_icon.onclick = ChangeIcon;
-play_button.onclick = MoveStopAnim;
+    let moving_icon = document.getElementById("moving-icon");
+    let play_button = document.getElementById("play-button");
+    let hidden_msg_front = document.getElementById("hidden-msg-front");
 
-function ChangeIcon(){
-    console.log(moving_icon.getAttribute("src"));
-    if(moving_icon.getAttribute("src") == "./Images/icons8-money-with-wings-48.png"){
-        moving_icon.setAttribute("src", "./Images/icons8-mushroom-49.png");
-    }
-    else{
-        moving_icon.setAttribute("src", "./Images/icons8-money-with-wings-48.png");
-    }
-}
+    moving_icon.onclick = ChangeIcon;
+    
 
-function StartAnimation(){
-    document.getElementById("moving-icon").classList.toggle("anim-start");
-}
+        /* .... Fonction pour changer l'image de l'icône au clic */
 
-function StopAnimation(){
-    document.getElementById("moving-icon").classList.toggle("anim-start");
-    let x = document.getElementById("moving-icon").getBoundingClientRect().left;
-    console.log(x);
-}
+        function ChangeIcon(){
+            console.log(moving_icon.getAttribute("src"));
+            if(moving_icon.getAttribute("src") == "./Images/icons8-money-with-wings-48.png"){
+                moving_icon.setAttribute("src", "./Images/icons8-mushroom-49.png");
+            }
+            else{
+                moving_icon.setAttribute("src", "./Images/icons8-money-with-wings-48.png");
+            }
+        }
 
-function MoveStopAnim(){
-    if(play_button.textContent == "▷"){
-        console.log("Button state : Play");
-        moving_icon.classList.toggle("anim-start");
-        hidden_msg_front.classList.toggle("showhide-msg")
-        play_button.textContent = "▢";
-    }
-    else{
-        console.log("Button state : Stop");
-        moving_icon.classList.toggle("anim-start");
-        hidden_msg_front.classList.toggle("showhide-msg")
-        play_button.textContent = "▷";
-    }
-}
+        function StartAnimation(){
+            document.getElementById("moving-icon").classList.toggle("anim-start");
+        }
+
+        function StopAnimation(){
+            document.getElementById("moving-icon").classList.toggle("anim-start");
+            let x = document.getElementById("moving-icon").getBoundingClientRect().left;
+            console.log(x);
+        }
+
+        /* .... Fonction pour démarrer et arrêter l'animation au clic du bouton */
+
+        play_button.onclick = MoveStopAnim;
+
+        function MoveStopAnim(){
+            if(play_button.textContent == "▷"){
+                console.log("Button state : Play");
+                moving_icon.classList.toggle("anim-start");
+                hidden_msg_front.classList.toggle("showhide-msg")
+                play_button.textContent = "▢";
+            }
+            else{
+                console.log("Button state : Stop");
+                moving_icon.classList.toggle("anim-start");
+                hidden_msg_front.classList.toggle("showhide-msg")
+                play_button.textContent = "▷";
+            }
+        }
 
 /* ------------ Page Liste Des Jeux ------------------- */
 if(pageName === "/ListeDesJeux.html"){

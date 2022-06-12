@@ -339,13 +339,14 @@ canvas {
 /* --------------------------------------------------- */
 
 /* ----------------PAGE QUI SOMMES NOUS------------------ */
+
 .qsn-h2 {
 	text-align: center;
 	font-size: 2em;
 	text-transform: uppercase;
 }
 
-	/* .... CSS des boutons : Notre Mission, Notre Histoire , Notre Equipe */
+	/* .... CSS des boutons : Notre Mission, Notre Histoire, Notre Equipe */
 
 		/* .... Mise en forme des boutons */
 
@@ -448,7 +449,7 @@ canvas {
 			transform: translateY(-2px);
 		  }
 
-		/* .... Bouton Play/Stop avec effet 3D */
+		/* .... Icone qui se déplace au clic du bouton */
 
 		.moving-icon{
 			position: absolute;
@@ -508,7 +509,154 @@ canvas {
 			animation: showhide-msg 4.9s ease-in-out alternate infinite;
 		}
 
+	/* .... La nouvelle fenêtre d'affichage au clic des boutons Notre Mission, Notre Histoire, Notre Equipe */
+
+		/* .... Mise en page de la fenêtre */
+
+		#board{
+			display: flex;
+			flex-direction: column;
+			position : absolute;
+			/* margin-top: 5%; */
+			/* top : -1%; */
+			width: 100%;
+			height: 100%;
+			/* height: 70%;
+			width: 60%; */
+			background-color: blanchedalmond;
+			border-radius: 100% 100% 100% 100% / 15% 15% 15% 15%;
+			transform: scale(0, 0);
+			z-index:3;
+		}
+
+		.board-main-content-container{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			height: 90%;
+			width: 100%;
+			margin: auto;
+		}
+
+		/* .... Bloc titre de la nouvelle fenêtre */
+
+		.board-title-container{
+			position: relative;
+			display: flex;
+			width: 100%;
+			height: 20%;
+
+		}
+
+		#board h3{
+			position: relative;
+			top: 0;
+			bottom: 0;
+			left: 25px;
+			margin: auto;
+			color: black;
+			width: calc(100% - 100px);
+			text-align: center;
+			font-size: 4em;
+			font-family: "edit_undo_line_brkregular";
+		}
+
+		/* .... Bouton "Fermer" avec effet 3D */
+
+		.pushable-close-button{
+			position : relative;
+			top: 0;
+			bottom: 0;
+			height: 50px;
+			width: 50px;
+			margin: auto;
+			border-radius: 50%;
+			background: hsl(340deg 100% 32%);
+			border: none;
+			padding: 0;
+			cursor: pointer;
+			outline-offset: 4px;
+		}
 		
+		.close-button-front{
+			display: flex;
+			position : absolute;
+			top: 0;
+			height: 50px;
+			width: 50px;
+			align-items: center;
+			justify-content: center;
+			/*padding: 12px 42px; */
+			border-radius: 50%;
+			font-size: 1.7rem;
+			background: hsl(345deg 100% 47%);
+			color: white;
+			transform: translateY(-6px);
+		}
+		
+		.pushable-close-button:active .close-button-front {
+			transform: translateY(-2px);
+		  }
+
+		  		/* .... ## NON UTILISE - AVOIR SI ON CONSERVE OU NON ## */
+
+				/* #close {
+					position: absolute;
+					top: 5%;
+					left: 85%;
+					border-radius: 50px;
+					height: 10%;
+					width: 5%;
+					background-color: red;
+				}
+				#close:hover #test1 {
+					transition: 1s;
+					transform: rotate(45deg);
+				}
+				#close:hover #test2 {
+					transition: 1s;
+					transform: rotate(-45deg);
+				} */
+
+
+		/* .... Bloc contenur de la nouvelle fenêtre */
+
+		.board-content-container{
+			position: relative;
+			display: flex;
+			width: 100%;
+			height: 80%;
+		}
+
+		#board-text{
+			position: relative;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			text-align: justify;
+			color: black;
+			font-family: "edit_undo_line_brkregular";
+			font-size: 1.5em;
+			/* margin-top: 15%;
+			margin-left: 5%; */
+			width: 40%;
+		}
+
+		#board-video{
+			display: block;
+			position: relative;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			width : 50%;
+			height: 50%;
+		}
+
+		
+
+		/* .... */
+
+
 
 
 #boutons{
@@ -541,38 +689,8 @@ canvas {
 	background-color: rgb(78, 83, 85);
 } */
 
-#board {
-	display: flex;
-	position : absolute;
-	/* margin-top: 5%; */
-	/* top : -1%; */
-	width: 100%;
-	height: 100%;
-	/* height: 70%;
-	width: 60%; */
-	background-color: blanchedalmond;
-	border-radius: 100% 100% 100% 100% / 15% 15% 15% 15%;
-	transform: scale(0, 0);
-	z-index:3;
-}
 
-#close {
-	position: absolute;
-	top: 5%;
-	left: 85%;
-	border-radius: 50px;
-	height: 10%;
-	width: 5%;
-	background-color: red;
-}
-#close:hover #test1 {
-	transition: 1s;
-	transform: rotate(45deg);
-}
-#close:hover #test2 {
-	transition: 1s;
-	transform: rotate(-45deg);
-}
+
 #test1 {
 	position: absolute;
 	left: 35%;
@@ -592,23 +710,8 @@ canvas {
 	background-color: white;
 }
 
-h3 {
-	color: black;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	text-align: center;
-	font-size: 4em;
-	font-family: "edit_undo_line_brkregular";
-}
-#text {
-	color: black;
-	font-family: "edit_undo_line_brkregular";
-	position: absolute;
-	font-size: 2em;
-	margin-top: 15%;
-	margin-left: 5%;
-}
+
+
 
 /* .button{
 	display: flex;
