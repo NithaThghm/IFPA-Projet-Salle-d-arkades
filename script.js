@@ -1,5 +1,71 @@
 let pageName = window.location.pathname;
+let pageIconNumber = 1
+
+const PageAcceuil = document.getElementById("Accueil")
+const PageQuiSommesNous = document.getElementById("QuiSommesNous")
+const PageJeux = document.getElementById("Jeux")
+const PageContact = document.getElementById("Contact")
 console.log(pageName)
+
+addEventListener("keypress", goto=>{
+    if (goto.key=== "Enter" && pageIconNumber ===1){
+        window.location.assign("./Page D'acceuil.html"); 
+    }
+    if (goto.key=== "Enter" && pageIconNumber ===2){
+        window.location.assign("./QuiSommesNous.html"); 
+    }
+    if (goto.key=== "Enter" && pageIconNumber ===3){
+        window.location.assign("./ListeDesJeux.html");
+    }
+    if (goto.key=== "Enter" && pageIconNumber ===4){
+        window.location.assign("./Form.html"); 
+    }
+})
+
+document.onkeydown = function Select(event){
+    console.log(pageIconNumber)
+    if(event.key=== "ArrowRight"){
+        pageIconNumber ++
+    }
+    if(event.key=== "ArrowLeft"){
+        pageIconNumber --
+    }
+    if(pageIconNumber === 0){
+        pageIconNumber = 4
+    }
+    if(pageIconNumber === 5){
+        pageIconNumber = 1
+    }
+    CheckPageNumber()
+}
+
+
+function CheckPageNumber(){
+    if (pageIconNumber ===1){
+        PageAcceuil.classList.add("nav-bg-on-select")
+        PageQuiSommesNous.classList.remove("nav-bg-on-select")
+        PageJeux.classList.remove("nav-bg-on-select")
+        PageContact.classList.remove("nav-bg-on-select")
+    }
+    if (pageIconNumber ===2){
+        PageAcceuil.classList.remove("nav-bg-on-select")
+        PageQuiSommesNous.classList.add("nav-bg-on-select")
+        PageJeux.classList.remove("nav-bg-on-select")
+        PageContact.classList.remove("nav-bg-on-select")
+    }
+    if (pageIconNumber ===3){
+        PageAcceuil.classList.remove("nav-bg-on-select")
+        PageQuiSommesNous.classList.remove("nav-bg-on-select")
+        PageJeux.classList.add("nav-bg-on-select")
+        PageContact.classList.remove("nav-bg-on-select")
+    }
+    if (pageIconNumber ===4){
+        PageAcceuil.classList.remove("nav-bg-on-select")
+        PageQuiSommesNous.classList.remove("nav-bg-on-select")
+        PageJeux.classList.remove("nav-bg-on-select")
+        PageContact.classList.add("nav-bg-on-select")
+    }
+}
 
 
 /* ------Page New Game-------*/
@@ -16,13 +82,12 @@ if(pageName === "/NewGame.html"){
 /* ------Page D'acceuil-------*/
 
 if(pageName === "/Page%20D'acceuil.html"){
-    const previous = document.getElementById("previous")
+const previous = document.getElementById("previous")
 const current = document.getElementById("current")
 const next = document.getElementById("next")
 const showphoto = document.getElementById("ShowPhoto")
 let ImageOrder = 1
 let ImageShow = false
-
 
 
 previous.addEventListener("click", previousphoto => {
@@ -224,18 +289,45 @@ function check(){
 
 /* ------------ Page Liste Des Jeux ------------------- */
 if(pageName === "/ListeDesJeux.html"){
+    let Jeux = false
     const Tetris = document.getElementById("Tetris")
     const Pong = document.getElementById("Pong")
     const Snake = document.getElementById("Snake")
+    const TetrisScript = document.createElement("script")
+    const PongScript = document.createElement("script")
+    const SnakeScript = document.createElement("script")
 
     Tetris.addEventListener("click", PageTetris =>{
-        window.location.assign("./Tetris.html")
+        if(Jeux=== false){
+            TetrisScript.setAttribute("src", "./Script des jeux/tetris.js")
+            document.body.appendChild(TetrisScript)
+            setTimeout(JeuxOpened, 100)
+        }
+        else if(Jeux === true){
+            window.location.assign("./ListeDesJeux.html"); 
+        }
     })
     Pong.addEventListener("click", PagePong =>{
-        window.location.assign("./Pong.html")
+        if(Jeux=== false){
+            PongScript.setAttribute("src", "./Script des jeux/Pong.js")
+            document.body.appendChild(PongScript)
+            setTimeout(JeuxOpened, 100)
+        }
+        else if(Jeux === true){
+            window.location.assign("./ListeDesJeux.html"); 
+        }
     })
     Snake.addEventListener("click", PageSnake =>{
-        window.location.assign("./Snake.html")
+        if(Jeux=== false){
+            SnakeScript.setAttribute("src", "./Script des jeux/Snake.js")
+            document.body.appendChild(SnakeScript)
+            setTimeout(JeuxOpened, 100)
+        }
+        else if(Jeux === true){
+            window.location.assign("./ListeDesJeux.html"); 
+        }
     })
-    document.onmouseenter()
+    function JeuxOpened() {
+        Jeux = true
+    }
 }

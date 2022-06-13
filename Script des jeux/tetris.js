@@ -27,8 +27,8 @@ var Page = {
     
     var bodyW = document.documentElement.clientWidth,
         bodyH = document.documentElement.clientHeight,
-        newUnitW = (bodyW - (bodyW % 80)) / 2,
-        newUnitH = (bodyH - (bodyH % 100)) / 40,
+        newUnitW = (bodyW - (bodyW % 70)) / 2,
+        newUnitH = (bodyH - (bodyH % 100)) / 33,
         newUnitMin = Math.max(Math.min(newUnitW, newUnitH), 20);    
     
     // if the calcUnitMin != unitSize, update unitSize, recalculate
@@ -38,7 +38,7 @@ var Page = {
 
     // store Right-most & Bottom-most points for canvas bounds
     var rightLimit = 0,
-        bottomLimit = 0;
+        bottomLimit = 50;
 
     for(var i = 0; i < Page.AreaArr.length; i++){
       Page.AreaArr[i].CalculateBounds();
@@ -54,8 +54,8 @@ var Page = {
     this.cvs.height = bottomLimit;
 
     // left pos uses Game.W because ideally that area is centered
-    var topPos = (bodyH - bottomLimit) / 1.5,
-        leftPos = (bodyW / 2) - (this.Game.W / 2),
+    var topPos = (bodyH - bottomLimit) / 80,
+        leftPos = (bodyW / 2) - (this.Game.W / 0.65),
         rightOffset = bodyW - (leftPos + rightLimit) - this.unitSize * 0.5;       
 
     // if default canvas positioning extends beyond screen, adjust it
