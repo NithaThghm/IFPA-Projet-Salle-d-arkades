@@ -72,7 +72,7 @@ current.addEventListener("click", show =>{
     if (ImageShow === false){
         current.style.zIndex = 1;
         current.style.transition = "250ms"
-        current.style.transform = "Scale(1.8,1.8)"
+        current.style.transform = "Scale(1.8,1.8) translateX(-28%)"
         setTimeout(MakeitTrue, 500)
     }
     if (ImageShow === true){
@@ -98,24 +98,24 @@ function check(){
         ImageOrder = 4
     }
     if (ImageOrder===1){
-        previous.style.backgroundImage = "url(./Images/photo4.PNG)"
-        current.style.backgroundImage = "url(./Images/photo1.PNG)"
-        next.style.backgroundImage = "url(./Images/photo2.PNG)"
+        previous.style.backgroundImage = "url(./Images/4pexels-cottonbro-4835429.jpg)"
+        current.style.backgroundImage = "url(./Images/1pexels-cottonbro-4836371.jpg)"
+        next.style.backgroundImage = "url(./Images/2pexels-cottonbro-5767459.jpg)"
     }
     else if (ImageOrder ===2){
-        previous.style.backgroundImage = "url(./Images/photo1.PNG)"
-        current.style.backgroundImage = "url(./Images/photo2.PNG)"
-        next.style.backgroundImage = "url(./Images/photo3.PNG)"
+        previous.style.backgroundImage = "url(./Images/1pexels-cottonbro-4836371.jpg)"
+        current.style.backgroundImage = "url(./Images/2pexels-cottonbro-5767459.jpg)"
+        next.style.backgroundImage = "url(./Images/3pexels-cottonbro-4841182.jpg)"
     }
     else if (ImageOrder ===3){
-        previous.style.backgroundImage = "url(./Images/photo2.PNG)"
-        current.style.backgroundImage = "url(./Images/photo3.PNG)"
-        next.style.backgroundImage = "url(./Images/photo4.PNG)"
+        previous.style.backgroundImage = "url(./Images/2pexels-cottonbro-5767459.jpg)"
+        current.style.backgroundImage = "url(./Images/3pexels-cottonbro-4841182.jpg)"
+        next.style.backgroundImage = "url(./Images/4pexels-cottonbro-4835429.jpg)"
     }
     else if (ImageOrder ===4){
-        previous.style.backgroundImage = "url(./Images/photo3.PNG)"
-        current.style.backgroundImage = "url(./Images/photo4.PNG)"
-        next.style.backgroundImage = "url(./Images/photo1.PNG)"
+        previous.style.backgroundImage = "url(./Images/3pexels-cottonbro-4841182.jpg)"
+        current.style.backgroundImage = "url(./Images/4pexels-cottonbro-4835429.jpg)"
+        next.style.backgroundImage = "url(./Images/1pexels-cottonbro-4836371.jpg)"
     }
 }
 

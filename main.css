@@ -30,7 +30,7 @@ html {
 }
 
 body {
-	position : absolute;
+	position: absolute;
 	font-family: "edit_undo_line_brkregular";
 	color: blanchedalmond;
 	font-size: 20px;
@@ -43,7 +43,6 @@ body {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	/* width: 1440px; */
 	width: 75vw;
 	margin: auto;
 }
@@ -65,21 +64,18 @@ body {
 	/* ----------------------------------------------- */
 
 	outline: solid 10px rgb(36, 43, 44);
-	/* padding-bottom: 10px; */
+	padding-bottom: 10px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	/* overflow: auto; */
 }
 
 header {
 	width: 100%;
 }
 
-
-
-main{
+main {
 	width: 100%;
 	height: 100%;
 	
@@ -94,6 +90,7 @@ h1 {
 h1 a {
 	color: blanchedalmond;
 }
+
 .new-game a {
 	/* ------------------DEGRADE SUR LE TEXTE NEW GAME---------- */
 	background: linear-gradient(0deg, rgba(255, 178, 2, 0.3) 0%, rgba(236, 122, 33, 0.5) 50%, rgba(255, 94, 4, 1) 100%);
@@ -108,7 +105,7 @@ h1 a {
 	text-transform: uppercase;
 
 	/* ----------------ANIMATION NEW GAME------------------ */
-	animation-duration: 1s;
+	animation-duration: 2s;
 	animation-name: start;
 	animation-iteration-count: infinite;
 }
@@ -151,11 +148,7 @@ iframe {
 	height: 100%;
 }
 form {
-	/* border: solid 2px blanchedalmond; */
-	/* border-radius: 4px; */
 	width: 100%;
-	/* margin: auto; */
-	/* padding: 10px; */
 }
 .h2-form {
 	text-align: center;
@@ -230,55 +223,74 @@ input[type="reset"]:active {
 }
 
 /* Added by Nitha 08/06/2022 */
-	.nav-bg-on-select{
-		background-color: rgb(250, 196, 228);
-	}
+.nav-bg-on-select {
+	background-color: rgb(250, 196, 228);
+}
 
-	.nav-heart-icon{
-		height: 20px;
-		width: 20px;
-		margin-right: 10px;
-	}
-
+.nav-heart-icon {
+	height: 20px;
+	width: 20px;
+	margin-right: 10px;
+}
 
 /* -------------------------------------------------- */
+
+/* -------------------PAGE D'ACCUEIL------------------------- */
+.bloc-accueil {
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+.bloc-welcome {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	padding: 10px;
+}
+.bloc-welcome>h4 {
+	margin-bottom: 50px;
+	font-size: 2em;
+	text-transform: uppercase;
+}
+.bloc-caroucel {
+	width: 50%;
+	padding: 10px;
+}
 
 /* --------------CAROUCEL PAGE D'ACCUEIL----------------------------- */
 #images {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	align-items: center;
 	height: 100%;
-	width: 100%;
-	margin: 5%;
+	width: 50%;
 }
 
 #previous {
 	height: 50%;
 	width: 50%;
-	margin: 5%;
-	background-size: contain;
-	background-repeat: no-repeat;
+	margin: 5px;
+	background-size: cover;
 	background-position: center;
-	background-image: url(./Images/photo4.png);
+	background-image: url(./Images/4pexels-cottonbro-4835429.jpg);
 }
 #current {
 	height: 100%;
 	width: 100%;
-	background-size: contain;
-	background-repeat: no-repeat;
+	background-size: cover;
 	background-position: center;
-	background-image: url(./Images/photo1.png);
+	background-image: url(./Images/1pexels-cottonbro-4836371.jpg);
 }
 
 #next {
 	height: 50%;
 	width: 50%;
-	margin: 5%;
-	background-size: contain;
-	background-repeat: no-repeat;
+	margin: 5px;
+	background-size: cover;
 	background-position: center;
-	background-image: url(./Images/photo2.png);
+	background-image: url(./Images/2pexels-cottonbro-5767459.jpg);
 }
 /* ------------------------------------------------------ */
 
@@ -306,7 +318,7 @@ input[type="reset"]:active {
 	font-size: 0.8rem;
 }
 /* --------------PAGE Liste des jeux------------------------ */
-.btn-jeux{
+.btn-jeux {
 	height: 15%;
 	width: 65%;
 }
@@ -315,10 +327,9 @@ input[type="reset"]:active {
 
 #stage {
 	border: 2px solid rgb(151, 149, 149);
-  }
+}
 
 /* ------------------------------------------*/
-
 
 /* --------------PAGE PONG------------------------ */
 .pong-main {
@@ -672,8 +683,8 @@ canvas {
 	/* margin-inline: 2vw; 
 	/* padding-inline: 2vw; 
 	font-size: 2em;
-	height: 75%;
-	width: 25%;
+	height: auto;
+	width: 200px;
 	text-align: center;
 	font-family: "edit_undo_line_brkregular";
 	background-color: rgb(159, 168, 170);
@@ -753,12 +764,7 @@ canvas {
 /* ---------------RESPONSIVE----------------------------- */
 @media (max-width: 1440px) {
 	body {
-		font-size: 14px;
-		width: 1024px;
-	}
-	.screen {
-		width: 890px;
-		height: 655px;
+		font-size: 13px;
 	}
 }
 
@@ -781,20 +787,76 @@ canvas {
 
 /* ----------------Mobile------------------------ */
 @media (max-width: 430px) {
-	html {
-		background-color: black;
-	}
 	body {
 		font-size: 9px;
 		height: 100vh;
 		width: 100vw;
+		border-radius: 0;
 	}
-	h2 {
-		font-size: 3.9em;
+	h1{
+		margin-top: 15px;
+		
+	}
+	.new-game {
+		font-size: 3.95em;
 	}
 	.screen {
 		height: 95vh;
 		width: 95vw;
 		border: solid 5px rgb(36, 43, 44);
+		overflow: auto;
 	}
+	/* ------PAGE D'ACCUEIL------ */
+	.bloc-accueil {
+		flex-wrap: wrap;
+		/* overflow: auto; */
+	}
+	.bloc-accueil
+	.bloc-welcome,
+	.bloc-caroucel,
+	#images
+	{
+		width: 100%;
+	}
+	
+
+	/* --------FORMULAIRE DE CONTACT--------- */
+	.main-contact {
+		overflow: auto;
+	}
+	
+	.bloc-contact-map{
+		flex-wrap: wrap;
+	}
+	.bloc-contact,
+	.bloc-map {
+		width: 100%;
 }
+
+}
+
+
+.neonText:hover {
+	animation: flicker 1.5s infinite alternate;
+	color: blanchedalmond;
+}
+@keyframes flicker {
+    
+	0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+		text-shadow:
+		0 0 7px blanchedalmond,
+      	0 0 10px blanchedalmond,
+      	0 0 21px blanchedalmond,
+      	0 0 42px #ee22c5,
+      	0 0 82px #ee22c5,
+      	0 0 92px #ee22c5,
+      	0 0 102px #ee22c5,
+      	0 0 151px #ee22c5;
+	
+	}
+	
+	20%, 24%, 55% {        
+		text-shadow: none;
+	}    
+  }
