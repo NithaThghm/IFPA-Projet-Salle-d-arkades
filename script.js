@@ -4,7 +4,7 @@ console.log(pageName)
 
 /* ------Page New Game-------*/
 
-if(pageName === "/NewGame.html"){
+if(pageName === "/index.html"){
     document.body.addEventListener("click", e =>{
         window.location.assign("./Page D'acceuil.html"); 
     })
