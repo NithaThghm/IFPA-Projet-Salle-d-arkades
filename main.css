@@ -809,7 +809,7 @@ canvas {
 	/* ------PAGE D'ACCUEIL------ */
 	.bloc-accueil {
 		flex-wrap: wrap;
-		/* overflow: auto; */
+		overflow: auto;
 	}
 	.bloc-accueil
 	.bloc-welcome,
@@ -821,9 +821,9 @@ canvas {
 	
 
 	/* --------FORMULAIRE DE CONTACT--------- */
-	.main-contact {
+	/* .main-contact {
 		overflow: auto;
-	}
+	} */
 	
 	.bloc-contact-map{
 		flex-wrap: wrap;
