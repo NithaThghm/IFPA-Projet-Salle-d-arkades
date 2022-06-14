@@ -189,9 +189,9 @@ function check(){
 /* ------------ Page Qui Sommes Nous ------------------- */
 if(pageName === "/QuiSommesNous.html"){
     const board = document.getElementById("board")
-    const title = document.getElementById("title")
-    const text = document.getElementById("text")
-    const close = document.getElementById("close")
+    const title = document.getElementById("board-title")
+    const text = document.getElementById("board-text")
+    const close = document.getElementById("close-button")
 
     const mission = document.getElementById("mission")
     const histoire = document.getElementById("histoire")
